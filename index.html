@@ -11,41 +11,13 @@
     AgenticLab: A Real-World Robot Agent Platform that Can See, Think, and Act
   </title>
 
-  <link rel="apple-touch-icon" sizes="57x57"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="60x60"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-60x60.png" />
-  <link rel="apple-touch-icon" sizes="72x72"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="76x76"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180"
-    href="//www-media.stanford.edu/assets/favicon/apple-touch-icon-180x180.png" />
-
-  <link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-196x196.png"
-    sizes="196x196" />
-  <link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-192x192.png"
-    sizes="192x192" />
-  <link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-128.png" sizes="128x128" />
-  <link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-32x32.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="//www-media.stanford.edu/assets/favicon/favicon-16x16.png" sizes="16x16" />
-
-  <link rel="mask-icon" href="//www-media.stanford.edu/assets/favicon/safari-pinned-tab.svg" color="#ffffff">
-  <meta name="application-name" content="Stanford University" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./static/images/agneticlab_icon.png" />
+  <link rel="apple-touch-icon" href="./static/images/agneticlab_icon.png" />
+  
+  <meta name="application-name" content="AgenticLab" />
   <meta name="msapplication-TileColor" content="#FFFFFF" />
-  <meta name="msapplication-TileImage" content="//www-media.stanford.edu/assets/favicon/mstile-144x144.png" />
-  <meta name="msapplication-square70x70logo" content="//www-media.stanford.edu/assets/favicon/mstile-70x70.png" />
-  <meta name="msapplication-square150x150logo" content="//www-media.stanford.edu/assets/favicon/mstile-150x150.png" />
-  <meta name="msapplication-square310x310logo" content="//www-media.stanford.edu/assets/favicon/mstile-310x310.png" />
+  <meta name="msapplication-TileImage" content="./static/images/agneticlab_icon.png" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZ38WT2YPD"></script>
@@ -205,17 +177,37 @@
 </section>
 
 <!-- Sorting Task -->
-<section class="section is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h3 class="title is-4 has-text-centered">Sorting</h3>
-        <div class="content has-text-justified">
-          <p>The agent categorizes objects into designated bins based on semantic attributes, demonstrating open-vocabulary grounding and compositional reasoning.</p>
-        </div>
-        <!-- Video placeholder - will be populated later -->
-        <video autoplay muted loop playsinline width="100%" style="background: #f5f5f5; min-height: 400px;">
-          <!-- <source src="./static/videos/sort/demo.mp4" type="video/mp4"> -->
+<section class="section is-medium">
+  <div class="container is-widescreen">
+    <h3 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 30px;">Sorting</h3>
+    <div class="content has-text-centered" style="max-width: 900px; margin: 0 auto 40px;">
+      <p style="font-size: 1.1rem;">The agent categorizes objects into designated bins based on semantic attributes, demonstrating open-vocabulary grounding and compositional reasoning.</p>
+    </div>
+    
+    <!-- Grid of 4 sorting videos -->
+    <div class="columns is-multiline is-variable is-4">
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Kitchen</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/sort/s2_sort2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Lobby</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/sort/s4_sort2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Outdoor</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/sort/s6_sort2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Outdoor</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/sort/s7_sort2.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -223,17 +215,37 @@
 </section>
 
 <!-- Stacking Task -->
-<section class="section is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h3 class="title is-4 has-text-centered">Stacking</h3>
-        <div class="content has-text-justified">
-          <p>Vertically arranging objects in specified order, requiring precise placement and sequential planning with strong dependencies.</p>
-        </div>
-        <!-- Video placeholder -->
-        <video autoplay muted loop playsinline width="100%" style="background: #f5f5f5; min-height: 400px;">
-          <!-- <source src="./static/videos/stack/demo.mp4" type="video/mp4"> -->
+<section class="section is-medium">
+  <div class="container is-widescreen">
+    <h3 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 30px;">Stacking</h3>
+    <div class="content has-text-centered" style="max-width: 900px; margin: 0 auto 40px;">
+      <p style="font-size: 1.1rem;">Vertically arranging objects in specified order, requiring precise placement and sequential planning with strong dependencies.</p>
+    </div>
+    
+    <!-- Grid of 4 stacking videos -->
+    <div class="columns is-multiline is-variable is-4">
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Lobby</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/stacking/s4_stack.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Kitchen</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/stacking/s5_stack.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Outdoor</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/stacking/s6_stack.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Outdoor</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/stacking/s7_stack.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -241,17 +253,37 @@
 </section>
 
 <!-- Crossword Task -->
-<section class="section is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h3 class="title is-4 has-text-centered">Crossword</h3>
-        <div class="content has-text-justified">
-          <p>Arranging letter blocks to form intersecting words on a grid, combining world knowledge with fine-grained spatial placement.</p>
-        </div>
-        <!-- Video placeholder -->
-        <video autoplay muted loop playsinline width="100%" style="background: #f5f5f5; min-height: 400px;">
-          <!-- <source src="./static/videos/crossword/demo.mp4" type="video/mp4"> -->
+<section class="section is-medium">
+  <div class="container is-widescreen">
+    <h3 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 30px;">Crossword</h3>
+    <div class="content has-text-centered" style="max-width: 900px; margin: 0 auto 40px;">
+      <p style="font-size: 1.1rem;">Arranging letter blocks to form intersecting words on a grid, combining world knowledge with fine-grained spatial placement.</p>
+    </div>
+    
+    <!-- Grid of 4 crossword videos -->
+    <div class="columns is-multiline is-variable is-4">
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Kitchen</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/crossword/s2_cw3_1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Lobby</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/crossword/s4_cw.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Outdoor</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/crossword/s5_cw.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Outdoor</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/crossword/s6_cw.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -259,17 +291,37 @@
 </section>
 
 <!-- Reorientation Task -->
-<section class="section is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h3 class="title is-4 has-text-centered">Reorientation</h3>
-        <div class="content has-text-justified">
-          <p>Adjusting object poses to satisfy language-specified orientation constraints, emphasizing spatial understanding beyond 2D placement.</p>
-        </div>
-        <!-- Video placeholder -->
-        <video autoplay muted loop playsinline width="100%" style="background: #f5f5f5; min-height: 400px;">
-          <!-- <source src="./static/videos/obj_ori/demo.mp4" type="video/mp4"> -->
+<section class="section is-medium">
+  <div class="container is-widescreen">
+    <h3 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 30px;">Reorientation</h3>
+    <div class="content has-text-centered" style="max-width: 900px; margin: 0 auto 40px;">
+      <p style="font-size: 1.1rem;">Adjusting object poses to satisfy language-specified orientation constraints, emphasizing spatial understanding beyond 2D placement.</p>
+    </div>
+    
+    <!-- Grid of 4 reorientation videos -->
+    <div class="columns is-multiline is-variable is-4">
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">Lab Scene</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/reorientation/obj_ori3_2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">Lab Scene</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/reorientation/s1_obj_ori3_1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Kitchen</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/reorientation/s2_obj_ori2_3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Outdoor</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/reorientation/s7_obj_ori.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -277,17 +329,37 @@
 </section>
 
 <!-- Kitchen Task -->
-<section class="section is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h3 class="title is-4 has-text-centered">Kitchen Rearrangement</h3>
-        <div class="content has-text-justified">
-          <p>Long-horizon rearrangement task placing items into context-appropriate containers, requiring sustained grounding and error recovery.</p>
-        </div>
-        <!-- Video placeholder -->
-        <video autoplay muted loop playsinline width="100%" style="background: #f5f5f5; min-height: 400px;">
-          <!-- <source src="./static/videos/kitchen/demo.mp4" type="video/mp4"> -->
+<section class="section is-medium">
+  <div class="container is-widescreen">
+    <h3 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 30px;">Kitchen</h3>
+    <div class="content has-text-centered" style="max-width: 900px; margin: 0 auto 40px;">
+      <p style="font-size: 1.1rem;">Long-horizon rearrangement task placing items into context-appropriate containers, requiring sustained grounding and error recovery.</p>
+    </div>
+    
+    <!-- Grid of 4 kitchen videos (larger) -->
+    <div class="columns is-multiline is-variable is-4">
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Lobby</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/kitchen/s4_kitchen.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Lobby</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/kitchen/s5_kitchen.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Outdoor</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/kitchen/s6_kitchen.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Outdoor</p>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
+          <source src="./static/videos/kitchen/s7_kitchen.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -297,27 +369,31 @@
 
 
 <!-- Method Section -->
-<section class="section is-small" id="method">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-2 has-text-centered is-size-4-mobile">Method</h2>
-        <div class="content has-text-justified">
-          <p>
-            AgenticLab executes a closed-loop agentic reasoning pipeline for manipulation that integrates task parsing, grounding, planning, execution, verification, and replanning. The system operates through iterative perception and action cycles, enabling robust performance in unstructured environments.
-          </p>
-        </div>
-        <div class="has-text-centered">
-          <a href="./static/pipeline.pdf" target="_blank">
-            <img src="./static/images/pipeline.png" alt="AgenticLab Pipeline" style="width: 100%; max-width: 100%; border: 1px solid #ddd;" />
-          </a>
-          <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Click image to view full resolution pipeline diagram</p>
-        </div>
-        <div class="content has-text-justified">
-          <p>
-            The pipeline uses multi-view RGB-D observations for open-vocabulary grounding, VLM-based reasoning for task decomposition and verification, and primitive-based execution with closed-loop feedback. This modular design allows different VLMs to be swapped in through a unified interface, enabling fair evaluation without model-specific engineering.
-          </p>
-        </div>
+<section class="section is-medium" id="method">
+  <div class="container is-widescreen">
+    <h2 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 40px;">Method</h2>
+    
+    <!-- Description with green left border (SONIC style) -->
+    <div style="max-width: 1000px; margin: 0 auto 50px; background-color: #f5f7f9; padding: 30px 30px 30px 40px; border-left: 5px solid #95BD94; border-radius: 4px;">
+      <p style="font-size: 1.1rem; line-height: 1.8; color: #333; font-style: italic; margin: 0;">
+        AgenticLab executes a closed-loop agentic reasoning pipeline for manipulation that integrates task parsing, grounding, planning, execution, verification, and replanning. The system operates through iterative perception and action cycles, enabling robust performance in unstructured environments.
+      </p>
+    </div>
+    
+    <!-- Pipeline diagram (larger) -->
+    <div class="has-text-centered" style="margin-bottom: 40px;">
+      <a href="./static/images/pipeline.png" target="_blank">
+        <img src="./static/images/pipeline.png" alt="AgenticLab Pipeline" style="width: 100%; max-width: 100%; border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+      </a>
+      <p style="margin-top: 15px; font-size: 1rem; color: #666;">Click image to view full resolution</p>
+    </div>
+    
+    <!-- Additional description -->
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <div class="content has-text-justified">
+        <p style="font-size: 1.05rem; line-height: 1.7; color: #444;">
+          The pipeline uses multi-view RGB-D observations for open-vocabulary grounding, VLM-based reasoning for task decomposition and verification, and primitive-based execution with closed-loop feedback. This modular design allows different VLMs to be swapped in through a unified interface, enabling fair evaluation without model-specific engineering.
+        </p>
       </div>
     </div>
   </div>
@@ -327,36 +403,42 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3 is-size-4-mobile">Our Team</h2>
     <div class="container has-text-centered">
-      <div class="publication-authors is-flex justify-content is-justify-content-space-around is-flex-wrap-wrap is-hidden-mobile">
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-          <a>Pengyuan Guo</a><sup>1,*</sup>
+      <div class="publication-authors is-hidden-mobile">
+        <!-- First row -->
+        <div class="is-flex justify-content is-justify-content-space-around is-flex-wrap-wrap" style="margin-bottom: 15px;">
+          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
+            <a>Pengyuan Guo</a><sup>1,*</sup>
+          </div>
+          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
+            <a>Zhonghao Mai</a><sup>1,*</sup>
+          </div>
+          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
+            <a>Zhengtong Xu</a><sup>1,*</sup>
+          </div>
+          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
+            <a>Kaidi Zhang</a><sup>1</sup>
+          </div>
+          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
+            <a>Heng Zhang</a><sup>2</sup>
+          </div>
+          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
+            <a>Zichen Miao</a><sup>1</sup>
+          </div>
         </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-          <a>Zhonghao Mai</a><sup>1,*</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-          <a>Zhengtong Xu</a><sup>1,*</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-          <a>Kaidi Zhang</a><sup>1</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-          <a>Heng Zhang</a><sup>2</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-          <a>Zichen Miao</a><sup>1</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-          <a>Arash Ajoudani</a><sup>2</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-          <a>Zachary Kingston</a><sup>1</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-          <a>Qiang Qiu</a><sup>1</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-          <a>Yu She</a><sup>1</sup>
+        <!-- Second row -->
+        <div class="is-flex justify-content is-justify-content-space-around is-flex-wrap-wrap">
+          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
+            <a>Arash Ajoudani</a><sup>2</sup>
+          </div>
+          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
+            <a>Zachary Kingston</a><sup>1</sup>
+          </div>
+          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
+            <a>Qiang Qiu</a><sup>1</sup>
+          </div>
+          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
+            <a>Yu She</a><sup>1</sup>
+          </div>
         </div>
       </div>
 
