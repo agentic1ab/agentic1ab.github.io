@@ -42,7 +42,134 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  
+  <style>
+    /* Side Content Bar Styles */
+    .side-content-bar {
+      position: fixed;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      padding: 20px 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      max-width: 200px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .side-content-bar h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #999;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .side-content-bar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .side-content-bar li {
+      margin-bottom: 8px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+    
+    .side-content-bar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      display: block;
+      padding: 8px 12px;
+      border-left: 4px solid transparent;
+      position: relative;
+    }
+    
+    .side-content-bar li:hover {
+      background-color: #e8f5e7;
+    }
+    
+    .side-content-bar a:hover {
+      color: #5a9958;
+    }
+    
+    .side-content-bar a.active {
+      color: #333;
+      font-weight: 600;
+      border-left: 4px solid #95BD94;
+    }
+    
+    @media screen and (max-width: 1200px) {
+      .side-content-bar {
+        display: none;
+      }
+    }
+  </style>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Highlight active section in sidebar
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.side-content-bar a');
+      const sideBar = document.querySelector('.side-content-bar');
+      const heroSection = document.querySelector('.hero.is-fullheight');
+      
+      function updateSidebar() {
+        let currentSection = '';
+        const scrollPos = window.pageYOffset;
+        
+        // Show/hide sidebar based on hero section
+        if (heroSection) {
+          const heroBottom = heroSection.offsetTop + heroSection.clientHeight;
+          if (scrollPos < heroBottom - 100) {
+            sideBar.style.opacity = '0';
+          } else {
+            sideBar.style.opacity = '1';
+          }
+        }
+        
+        // Highlight active section
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (scrollPos >= sectionTop - 200) {
+            currentSection = section.getAttribute('id');
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + currentSection) {
+            link.classList.add('active');
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', updateSidebar);
+      updateSidebar();
+    });
+  </script>
 </head>
+
+<body>
+  <!-- Side Content Bar -->
+  <div class="side-content-bar">
+    <h4>CONTENTS</h4>
+    <ul>
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#tasks">Task Demos</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#team">BibTeX</a></li>
+    </ul>
+  </div>
+</body>
 
 <section class="hero is-link is-fullheight video" style="overflow: hidden; position:relative;">
   <div class="hero-video" style="height: 100%; width: 177.77777778vh; min-width: 100%;min-height: 56.25vw;">
@@ -131,21 +258,49 @@
 
   </div>
 
-  <!-- Hero footer: will stick at the bottom -->
-  <div class="hero-foot is-hidden-mobile">
-    <nav class="tabs is-boxed is-fullwidth is-size-5">
-      <ul>
-        <li><a href="#abstract">Abstract</a></li>
-        <li><a href="#tasks">Tasks</a></li>
-        <li><a href="#method">Method</a></li>
-        <li><a href="#team">Team</a></li>
-      </ul>
-    </nav>
-  </div>
 </section>
 
-
-
+<!-- Authors Section (before Abstract) -->
+<section class="section is-small" style="padding-top: 3rem; padding-bottom: 2rem;">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered">
+      <!-- Authors row 1 -->
+      <div style="margin-bottom: 10px; line-height: 2;">
+        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Pengyuan Guo</a><sup>1,*</sup>
+        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Zhonghao Mai</a><sup>1,*</sup>
+        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Zhengtong Xu</a><sup>1,*</sup>
+        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Kaidi Zhang</a><sup>1</sup>
+        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Heng Zhang</a><sup>2</sup>
+        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Zichen Miao</a><sup>1</sup>
+      </div>
+      <!-- Authors row 2 -->
+      <div style="margin-bottom: 15px; line-height: 2;">
+        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Arash Ajoudani</a><sup>2</sup>
+        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Zachary Kingston</a><sup>1</sup>
+        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Qiang Qiu</a><sup>1</sup>
+        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Yu She</a><sup>1</sup>
+      </div>
+      <!-- Affiliations -->
+      <div style="margin-bottom: 20px; font-size: 0.95rem; color: #666;">
+        <span><sup>1</sup>Purdue University</span>
+        <span style="margin: 0 10px;"><sup>2</sup>Instituto Italiano di Tecnologia</span>
+        <span style="margin-left: 10px;">*Equal contribution</span>
+      </div>
+      <!-- Buttons -->
+      <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        <a href="./static/agenticlab.pdf" style="background-color: #363636; color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px;">
+          <span>📄</span> PDF
+        </a>
+        <a href="https://arxiv.org/pdf/2602.01662" style="background-color: #363636; color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px;">
+          <span>📑</span> ArXiv
+        </a>
+        <span style="background-color: #dbdbdb; color: #7a7a7a; padding: 8px 20px; border-radius: 20px; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px; cursor: not-allowed;">
+          <span>💻</span> Code (Coming Soon)
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section is-medium" id="abstract">
   <div class="container is-max-desktop">
@@ -290,28 +445,99 @@
     <!-- Grid of 4 crossword videos -->
     <div class="columns is-multiline is-variable is-4">
       <div class="column is-half">
-        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Kitchen</p>
+        <div style="position: relative; margin-bottom: 12px;">
+          <p class="has-text-centered" style="font-size: 1.25rem; color: #333; font-weight: 700; margin: 0;">In-the-wild Kitchen</p>
+          <div style="position: absolute; top: 0; right: 0;">
+            <span style="cursor: pointer; background-color: #95BD94; color: white; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">Solution</span>
+            <img src="./static/images/crossword/1.png" alt="Crossword Solution 1" 
+                 style="display: none; position: absolute; top: 35px; right: 0; width: 300px; max-width: 90vw; z-index: 1000; border: 3px solid #95BD94; border-radius: 8px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); background: white; padding: 5px;"
+                 onmouseover="this.style.display='block'" onmouseout="this.style.display='none'">
+            <script>
+              document.currentScript.previousElementSibling.previousElementSibling.onmouseover = function() {
+                this.nextElementSibling.style.display = 'block';
+              };
+              document.currentScript.previousElementSibling.previousElementSibling.onmouseout = function() {
+                this.nextElementSibling.style.display = 'none';
+              };
+            </script>
+          </div>
+        </div>
         <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
           <source src="./static/videos/crossword/s2_cw3_1.mp4" type="video/mp4">
         </video>
       </div>
       <div class="column is-half">
-        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Lobby</p>
+        <div style="position: relative; margin-bottom: 12px;">
+          <p class="has-text-centered" style="font-size: 1.25rem; color: #333; font-weight: 700; margin: 0;">Lab Scene</p>
+          <div style="position: absolute; top: 0; right: 0;">
+            <span style="cursor: pointer; background-color: #95BD94; color: white; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">Solution</span>
+            <img src="./static/images/crossword/2.png" alt="Crossword Solution 2" 
+                 style="display: none; position: absolute; top: 35px; right: 0; width: 300px; max-width: 90vw; z-index: 1000; border: 3px solid #95BD94; border-radius: 8px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); background: white; padding: 5px;"
+                 onmouseover="this.style.display='block'" onmouseout="this.style.display='none'">
+            <script>
+              document.currentScript.previousElementSibling.previousElementSibling.onmouseover = function() {
+                this.nextElementSibling.style.display = 'block';
+              };
+              document.currentScript.previousElementSibling.previousElementSibling.onmouseout = function() {
+                this.nextElementSibling.style.display = 'none';
+              };
+            </script>
+          </div>
+        </div>
         <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
           <source src="./static/videos/crossword/s4_cw.mp4" type="video/mp4">
         </video>
       </div>
       <div class="column is-half">
-        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Outdoor</p>
+        <div style="position: relative; margin-bottom: 12px;">
+          <p class="has-text-centered" style="font-size: 1.25rem; color: #333; font-weight: 700; margin: 0;">In-the-wild Kitchen</p>
+          <div style="position: absolute; top: 0; right: 0;">
+            <span style="cursor: pointer; background-color: #95BD94; color: white; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">Solution</span>
+            <img src="./static/images/crossword/3.png" alt="Crossword Solution 3" 
+                 style="display: none; position: absolute; top: 35px; right: 0; width: 300px; max-width: 90vw; z-index: 1000; border: 3px solid #95BD94; border-radius: 8px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); background: white; padding: 5px;"
+                 onmouseover="this.style.display='block'" onmouseout="this.style.display='none'">
+            <script>
+              document.currentScript.previousElementSibling.previousElementSibling.onmouseover = function() {
+                this.nextElementSibling.style.display = 'block';
+              };
+              document.currentScript.previousElementSibling.previousElementSibling.onmouseout = function() {
+                this.nextElementSibling.style.display = 'none';
+              };
+            </script>
+          </div>
+        </div>
         <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
           <source src="./static/videos/crossword/s5_cw.mp4" type="video/mp4">
         </video>
       </div>
       <div class="column is-half">
-        <p class="has-text-centered" style="margin-bottom: 12px; font-size: 1.25rem; color: #333; font-weight: 700;">In-the-wild Outdoor</p>
+        <div style="position: relative; margin-bottom: 12px;">
+          <p class="has-text-centered" style="font-size: 1.25rem; color: #333; font-weight: 700; margin: 0;">In-the-wild Kitchen</p>
+          <div style="position: absolute; top: 0; right: 0;">
+            <span style="cursor: pointer; background-color: #95BD94; color: white; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">Solution</span>
+            <img src="./static/images/crossword/4.png" alt="Crossword Solution 4" 
+                 style="display: none; position: absolute; top: 35px; right: 0; width: 300px; max-width: 90vw; z-index: 1000; border: 3px solid #95BD94; border-radius: 8px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); background: white; padding: 5px;"
+                 onmouseover="this.style.display='block'" onmouseout="this.style.display='none'">
+            <script>
+              document.currentScript.previousElementSibling.previousElementSibling.onmouseover = function() {
+                this.nextElementSibling.style.display = 'block';
+              };
+              document.currentScript.previousElementSibling.previousElementSibling.onmouseout = function() {
+                this.nextElementSibling.style.display = 'none';
+              };
+            </script>
+          </div>
+        </div>
         <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px;">
           <source src="./static/videos/crossword/s6_cw.mp4" type="video/mp4">
         </video>
+      </div>
+      
+      <!-- Centered prompt box after the last two videos -->
+      <div class="column is-full">
+        <div style="max-width: 900px; margin: 20px auto 0; background-color: #f5f7f9; padding: 20px 20px 20px 25px; border-left: 4px solid #95BD94; border-radius: 4px;">
+          <p style="font-size: 1rem; line-height: 1.6; color: #555; font-style: italic; margin: 0; text-align: center;">Fill the numbered slots using the provided blocks to solve the crossword puzzle. You do not need to use all blocks or all slots.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -452,90 +678,8 @@
 
 <section class="section is-small" id="team">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 is-size-4-mobile">Our Team</h2>
+    <h2 class="title is-3 has-text-centered is-size-4-mobile" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 40px;">Citation</h2>
     <div class="container has-text-centered">
-      <div class="publication-authors is-hidden-mobile">
-        <!-- First row -->
-        <div class="is-flex justify-content is-justify-content-space-around is-flex-wrap-wrap" style="margin-bottom: 15px;">
-          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-            <a>Pengyuan Guo</a><sup>1,*</sup>
-          </div>
-          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-            <a>Zhonghao Mai</a><sup>1,*</sup>
-          </div>
-          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-            <a>Zhengtong Xu</a><sup>1,*</sup>
-          </div>
-          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-            <a>Kaidi Zhang</a><sup>1</sup>
-          </div>
-          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-            <a>Heng Zhang</a><sup>2</sup>
-          </div>
-          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-            <a>Zichen Miao</a><sup>1</sup>
-          </div>
-        </div>
-        <!-- Second row -->
-        <div class="is-flex justify-content is-justify-content-space-around is-flex-wrap-wrap">
-          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-            <a>Arash Ajoudani</a><sup>2</sup>
-          </div>
-          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-            <a>Zachary Kingston</a><sup>1</sup>
-          </div>
-          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-            <a>Qiang Qiu</a><sup>1</sup>
-          </div>
-          <div class="author-block has-text-centered has-addons-centered" style="margin: 10px;">
-            <a>Yu She</a><sup>1</sup>
-          </div>
-        </div>
-      </div>
-
-      <div class="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-evenly is-hidden-tablet">
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 5px;">
-          <a>Pengyuan Guo</a><sup>1,*</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 5px;">
-          <a>Zhonghao Mai</a><sup>1,*</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 5px;">
-          <a>Zhengtong Xu</a><sup>1,*</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 5px;">
-          <a>Kaidi Zhang</a><sup>1</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 5px;">
-          <a>Heng Zhang</a><sup>2</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 5px;">
-          <a>Zichen Miao</a><sup>1</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 5px;">
-          <a>Arash Ajoudani</a><sup>2</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 5px;">
-          <a>Zachary Kingston</a><sup>1</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 5px;">
-          <a>Qiang Qiu</a><sup>1</sup>
-        </div>
-        <div class="author-block has-text-centered has-addons-centered" style="margin: 5px;">
-          <a>Yu She</a><sup>1</sup>
-        </div>
-      </div>
-
-
-
-      <div class="publication-authors">
-        <span class="author-block"><sup>1</sup>Purdue University, </span>
-        <span class="author-block"><sup>2</sup>Instituto Italiano di Tecnologia, </span>
-        <span class="author-block">*Equal contribution</span>
-      </div>
-
-
-    </div>
     <br>
     <pre class="is-hidden-mobile"><code>@article{guo2025agenticlab,
   title={AgenticLab: A Real-World Robot Agent Platform that Can See, Think, and Act},
