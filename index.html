@@ -163,7 +163,7 @@
   <div class="side-content-bar">
     <h4>CONTENTS</h4>
     <ul>
-      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#abstract">Key Contributions</a></li>
       <li><a href="#tasks">Task Demos</a></li>
       <li><a href="#method">Method</a></li>
       <li><a href="#team">BibTeX</a></li>
@@ -174,88 +174,18 @@
 <section class="hero is-link is-fullheight video" style="overflow: hidden; position:relative;">
   <div class="hero-video" style="height: 100%; width: 177.77777778vh; min-width: 100%;min-height: 56.25vw;">
     <video playsinline autoplay muted loop>
-      <source src="./static/videos/AgenticLab_video.mp4" type="video/mp4">
+      <source src="./static/videos/teaser.mp4?v=2" type="video/mp4">
     </video>
   </div>
   <div class="hero-video is-hidden-tablet is-inline-block-mobile"
     style="height: 154.28571428vw; width: 100%; min-width:64.81481481vh;min-height:100%;">
     <video playsinline autoplay muted loop>
-      <source src="./static/videos/AgenticLab_video.mp4" type="video/mp4">
+      <source src="./static/videos/teaser.mp4?v=2" type="video/mp4">
     </video>
   </div>
-  <div class="overlay"></div>
-  <!-- Hero head: will stick at the top -->
-  <div class="hero-head is-hidden-mobile">
-    <header class="navbar">
-      <div class="container is-size-5">
-        <div class="navbar-menu">
-          <div class="navbar-end">
-            <a class="navbar-item pl-4 pr-4" href="./static/agenticlab.pdf">
-              <span class="icon" style="margin-right:5px;">
-                <img src="./static/images/pdf.svg" alt="PDF" />
-              </span>
-              <span>Paper</span>
-            </a>
-            <a class="navbar-item  pl-4 pr-4" href="https://arxiv.org/pdf/2602.01662">
-              <span class="icon" style="margin-right:5px;">
-                <img src="./static/images/arxiv.svg" alt="ArXiv" />
-              </span>
-              <span>arXiv</span> </a>
-            <span class="navbar-item  pl-4 pr-4">
-              <span class="button is-inverted is-large" style="cursor: not-allowed; opacity: 0.6;">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>Code (Coming Soon)</span>
-              </span>
-            </span>
-          </div>
-        </div>
-      </div>
-    </header>
-  </div>
-
+  
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 12rem;">
-        AgenticLab
-      </h1>
-      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 4rem;">
-        A Real-World Robot Agent Platform <br class="is-hidden-mobile"> that Can See, Think, and Act
-      </h1>
-      <div class="column has-text-centered is-hidden-tablet">
-        <div class="publication-links">
-          <!-- PDF Link. -->
-          <span class="link-block">
-            <a href="./static/agenticlab.pdf" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <img src="./static/images/pdf.svg" alt="PDF" />
-              </span>
-              <span>Paper</span>
-            </a>
-          </span>
-          <span class="link-block">
-            <a href="https://arxiv.org/pdf/2602.01662" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <img src="./static/images/arxiv.svg" alt="ArXiv" />
-              </span>
-              <span>arXiv</span>
-            </a>
-          </span>
-          <!-- Code Link. -->
-          <span class="link-block">
-            <span class="external-link button is-normal is-rounded is-dark" style="cursor: not-allowed; opacity: 0.6;">
-              <span class="icon">
-                <i class="fab fa-github"></i>
-              </span>
-              <span>Code (Coming Soon)</span>
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-
   </div>
 
 </section>
@@ -264,56 +194,97 @@
 <section class="section is-small" style="padding-top: 3rem; padding-bottom: 2rem;">
   <div class="container is-max-desktop">
     <div class="has-text-centered">
+      <!-- Paper Title -->
+      <h1 style="font-size: 2.6rem; font-weight: 700; color: #1a202c; margin-bottom: 2.5rem; line-height: 1.25;">
+        AgenticLab: A Real-World Robot Agent Platform<br>
+        that Can See, Think, and Act
+      </h1>
+      
       <!-- Authors row 1 -->
       <div style="margin-bottom: 10px; line-height: 2;">
-        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Pengyuan Guo</a><sup>1,*</sup>
-        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Zhonghao Mai</a><sup>1,*</sup>
-        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Zhengtong Xu</a><sup>1,*</sup>
-        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Kaidi Zhang</a><sup>1</sup>
-        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Heng Zhang</a><sup>2</sup>
-        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Zichen Miao</a><sup>1</sup>
+        <a style="font-size: 1.1rem; color: #5B9BD5; margin: 0 8px;">Pengyuan Guo</a><sup>1,*</sup>
+        <a style="font-size: 1.1rem; color: #5B9BD5; margin: 0 8px;">Zhonghao Mai</a><sup>1,*</sup>
+        <a style="font-size: 1.1rem; color: #5B9BD5; margin: 0 8px;">Zhengtong Xu</a><sup>1,*</sup>
+        <a style="font-size: 1.1rem; color: #5B9BD5; margin: 0 8px;">Kaidi Zhang</a><sup>1</sup>
+        <a style="font-size: 1.1rem; color: #5B9BD5; margin: 0 8px;">Heng Zhang</a><sup>2</sup>
+        <a style="font-size: 1.1rem; color: #5B9BD5; margin: 0 8px;">Zichen Miao</a><sup>1</sup>
       </div>
       <!-- Authors row 2 -->
       <div style="margin-bottom: 15px; line-height: 2;">
-        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Arash Ajoudani</a><sup>2</sup>
-        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Zachary Kingston</a><sup>1</sup>
-        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Qiang Qiu</a><sup>1</sup>
-        <a style="font-size: 1.1rem; color: #3273dc; margin: 0 8px;">Yu She</a><sup>1</sup>
+        <a style="font-size: 1.1rem; color: #5B9BD5; margin: 0 8px;">Arash Ajoudani</a><sup>2</sup>
+        <a style="font-size: 1.1rem; color: #5B9BD5; margin: 0 8px;">Zachary Kingston</a><sup>1</sup>
+        <a style="font-size: 1.1rem; color: #5B9BD5; margin: 0 8px;">Qiang Qiu</a><sup>1</sup>
+        <a style="font-size: 1.1rem; color: #5B9BD5; margin: 0 8px;">Yu She</a><sup>1</sup>
       </div>
       <!-- Affiliations -->
-      <div style="margin-bottom: 20px; font-size: 0.95rem; color: #666;">
+      <div style="margin-bottom: 25px; font-size: 0.95rem; color: #666; font-style: italic;">
         <span><sup>1</sup>Purdue University</span>
-        <span style="margin: 0 10px;"><sup>2</sup>Instituto Italiano di Tecnologia</span>
-        <span style="margin-left: 10px;">*Equal contribution</span>
+        <span style="margin: 0 15px;"><sup>2</sup>Instituto Italiano di Tecnologia</span>
+        <span style="margin-left: 15px;">*Equal contribution</span>
       </div>
       <!-- Buttons -->
-      <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-        <a href="./static/agenticlab.pdf" style="background-color: #363636; color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px;">
-          <span>📄</span> PDF
+      <div class="buttons is-centered" style="justify-content:center; gap:12px; flex-wrap:wrap;">
+        <a class="button is-dark is-rounded" href="./static/agenticlab.pdf">
+          <span class="icon"><i class="fas fa-file-pdf"></i></span>
+          <span>PDF</span>
         </a>
-        <a href="https://arxiv.org/pdf/2602.01662" style="background-color: #363636; color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px;">
-          <span>📑</span> ArXiv
+
+        <a class="button is-dark is-rounded" href="https://arxiv.org/pdf/2602.01662">
+          <span class="icon"><i class="ai ai-arxiv"></i></span>
+          <span>arXiv</span>
         </a>
-        <span style="background-color: #dbdbdb; color: #7a7a7a; padding: 8px 20px; border-radius: 20px; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px; cursor: not-allowed;">
-          <span>💻</span> Code (Coming Soon)
-        </span>
+
+        <a class="button is-dark is-rounded" href="https://twitter.com/intent/tweet?text=AgenticLab">
+          <span class="icon"><i class="fab fa-twitter"></i></span>
+          <span>Tweet</span>
+        </a>
+
+        <a class="button is-dark is-rounded" style="opacity:.6; pointer-events:none;">
+          <span class="icon"><i class="fab fa-github"></i></span>
+          <span>Code (Coming Soon)</span>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
 <section class="section is-medium" id="abstract">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-2 has-text-centered is-size-4-mobile">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Recent advances in large vision-language models (VLMs) have demonstrated generalizable open-vocabulary perception and reasoning, yet their real-robot manipulation capability remains unclear for long-horizon, closed-loop execution in unstructured, in-the-wild environments. We present <strong>AgenticLab</strong>, a model-agnostic robot agent platform and benchmark for open-world manipulation. AgenticLab provides a closed-loop agent pipeline for perception, task decomposition, online verification, and replanning. 
-          </p>
-          <p>
-            Using AgenticLab, we benchmark state-of-the-art VLM-based agents on real-robot tasks in unstructured environments. Our benchmark reveals several failure modes that offline vision-language tests fail to capture, including breakdowns in multi-step grounding consistency, object grounding under occlusion and scene changes, and insufficient spatial reasoning for reliable manipulation. We release the full hardware and software stack to support reproducible evaluation and accelerate research on general-purpose robot agents.
-          </p>
+  <div class="container is-max-widescreen">
+    <h2 class="title is-2 has-text-centered is-size-4-mobile" style="margin-bottom: 3rem; position: relative; display: inline-block; left: 50%; transform: translateX(-50%);">
+      Key Contributions
+      <div style="position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%); width: 110%; height: 4px; background-color: #95BD94; border-radius: 2px;"></div>
+    </h2>
+    
+    <div class="columns is-multiline" style="margin-top: 2rem;">
+      <!-- Contribution 1 -->
+      <div class="column is-half">
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); height: 100%; border: 2px solid transparent; border-left: 4px solid #95BD94; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.12)'; this.style.border='2px solid #95BD94'; this.style.borderLeft='4px solid #95BD94'; this.querySelector('h3').style.color='#95BD94'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'; this.style.border='2px solid transparent'; this.style.borderLeft='4px solid #95BD94'; this.querySelector('h3').style.color='#2c3e50'">
+          <h3 style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; transition: color 0.3s;">Closed-loop Vision-Language Robot Agent</h3>
+          <p style="font-size: 1rem; line-height: 1.7; color: #6c757d;">We introduce a robot agent pipeline for open-world, open-vocabulary manipulation with vision-language closed-loop reasoning.</p>
+        </div>
+      </div>
+      
+      <!-- Contribution 2 -->
+      <div class="column is-half">
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); height: 100%; border: 2px solid transparent; border-left: 4px solid #95BD94; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.12)'; this.style.border='2px solid #95BD94'; this.style.borderLeft='4px solid #95BD94'; this.querySelector('h3').style.color='#95BD94'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'; this.style.border='2px solid transparent'; this.style.borderLeft='4px solid #95BD94'; this.querySelector('h3').style.color='#2c3e50'">
+          <h3 style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; transition: color 0.3s;">Model-Agnostic VLM Interface</h3>
+          <p style="font-size: 1rem; line-height: 1.7; color: #6c757d;">Different VLMs (e.g., Gemini, GPT, Qwen) can be seamlessly swapped through a unified interface, enabling controlled evaluation without model-specific engineering.</p>
+        </div>
+      </div>
+      
+      <!-- Contribution 3 -->
+      <div class="column is-half">
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); height: 100%; border: 2px solid transparent; border-left: 4px solid #95BD94; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.12)'; this.style.border='2px solid #95BD94'; this.style.borderLeft='4px solid #95BD94'; this.querySelector('h3').style.color='#95BD94'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'; this.style.border='2px solid transparent'; this.style.borderLeft='4px solid #95BD94'; this.querySelector('h3').style.color='#2c3e50'">
+          <h3 style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; transition: color 0.3s;">Real-World Embodied Benchmark</h3>
+          <p style="font-size: 1rem; line-height: 1.7; color: #6c757d;">Our benchmark measures grounded perception, spatial reasoning, and long-horizon decision-making under closed-loop execution on physical robots.</p>
+        </div>
+      </div>
+      
+      <!-- Contribution 4 -->
+      <div class="column is-half">
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); height: 100%; border: 2px solid transparent; border-left: 4px solid #95BD94; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.12)'; this.style.border='2px solid #95BD94'; this.style.borderLeft='4px solid #95BD94'; this.querySelector('h3').style.color='#95BD94'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'; this.style.border='2px solid transparent'; this.style.borderLeft='4px solid #95BD94'; this.querySelector('h3').style.color='#2c3e50'">
+          <h3 style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; transition: color 0.3s;">Open-Source, Deployable Platform</h3>
+          <p style="font-size: 1rem; line-height: 1.7; color: #6c757d;">We release a reproducible hardware–software stack that integrates sensing, control, and agentic reasoning, enabling direct deployment of VLM-based agents in the wild.</p>
         </div>
       </div>
     </div>
@@ -322,7 +293,7 @@
 
 
 <!-- Task Demonstrations Carousel -->
-<section class="section is-small" id="tasks">
+<section class="section is-small" id="tasks" style="padding-bottom: 1rem;">
   <div class="container is-max-desktop">
     <h2 class="title is-2 has-text-centered is-size-4-mobile">Task Demonstrations</h2>
     <div class="content has-text-centered">
@@ -335,7 +306,7 @@
 </section>
 
 <!-- Sorting Task -->
-<section class="section is-medium">
+<section class="section is-medium" style="padding-top: 1rem;">
   <div class="container is-widescreen">
     <h3 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 30px;">Sorting</h3>
     <div class="content has-text-centered" style="max-width: 900px; margin: 0 auto 40px;">
