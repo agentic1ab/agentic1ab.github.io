@@ -47,15 +47,15 @@
     /* Side Content Bar Styles */
     .side-content-bar {
       position: fixed;
-      left: 20px;
+      left: 15px;
       top: 50%;
       transform: translateY(-50%);
       background: white;
-      padding: 20px 15px;
-      border-radius: 10px;
+      padding: 12px 12px;
+      border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       z-index: 1000;
-      max-width: 200px;
+      max-width: 140px;
       opacity: 0;
       transition: opacity 0.3s ease;
     }
@@ -64,7 +64,7 @@
       font-size: 0.85rem;
       font-weight: 600;
       color: #999;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -76,7 +76,7 @@
     }
     
     .side-content-bar li {
-      margin-bottom: 8px;
+      margin-bottom: 5px;
       border-radius: 4px;
       transition: background-color 0.2s;
     }
@@ -87,8 +87,8 @@
       font-size: 0.95rem;
       transition: all 0.2s;
       display: block;
-      padding: 8px 12px;
-      border-left: 4px solid transparent;
+      padding: 6px 10px;
+      border-left: 3px solid transparent;
       position: relative;
     }
     
@@ -103,7 +103,7 @@
     .side-content-bar a.active {
       color: #333;
       font-weight: 600;
-      border-left: 4px solid #95BD94;
+      border-left: 3px solid #95BD94;
     }
     
     @media screen and (max-width: 1200px) {
@@ -125,14 +125,11 @@
         let currentSection = '';
         const scrollPos = window.pageYOffset;
         
-        // Show/hide sidebar based on hero section
-        if (heroSection) {
-          const heroBottom = heroSection.offsetTop + heroSection.clientHeight;
-          if (scrollPos < heroBottom - 100) {
-            sideBar.style.opacity = '0';
-          } else {
-            sideBar.style.opacity = '1';
-          }
+        // Show/hide sidebar based on scroll position
+        if (scrollPos > 100) {
+          sideBar.style.opacity = '1';
+        } else {
+          sideBar.style.opacity = '0';
         }
         
         // Highlight active section
@@ -166,6 +163,8 @@
       <li><a href="#abstract">Key Contributions</a></li>
       <li><a href="#tasks">Task Demos</a></li>
       <li><a href="#method">Method</a></li>
+      <li><a href="#benchmark">Benchmarks</a></li>
+      <li><a href="#ablation">Ablation Study</a></li>
       <li><a href="#team">BibTeX</a></li>
     </ul>
   </div>
@@ -295,9 +294,9 @@
 <!-- Task Demonstrations Carousel -->
 <section class="section is-small" id="tasks" style="padding-bottom: 1rem;">
   <div class="container is-max-desktop">
-    <h2 class="title is-2 has-text-centered is-size-4-mobile">Task Demonstrations</h2>
+    <h2 class="title is-2 has-text-centered is-size-4-mobile">Real-World Robot Manipulation</h2>
     <div class="content has-text-centered">
-      <p>AgenticLab demonstrates diverse manipulation capabilities across multiple task categories in unstructured environments.</p>
+      <p>We design a suite of five real-world robot manipulation tasks to evaluate embodied vision-language reasoning under challenging conditions.</p>
     </div>
       <div style="margin-top: 15px; background-color: #f5f7f9; padding: 15px 15px 15px 20px; border-left: 4px solid #95BD94; border-radius: 4px;">
         <p style="font-size: 1rem; line-height: 1.6; color: #555; font-style: italic; margin: 0; text-align: center;">The open-vocabulary prompts used for each task are displayed below.</p>
@@ -306,7 +305,7 @@
 </section>
 
 <!-- Sorting Task -->
-<section class="section is-medium" style="padding-top: 1rem;">
+<section class="section is-medium" style="padding-top: 3rem; padding-bottom: 2rem;">
   <div class="container is-widescreen">
     <h3 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 30px;">Sorting</h3>
     <div class="content has-text-centered" style="max-width: 900px; margin: 0 auto 40px;">
@@ -356,7 +355,7 @@
 </section>
 
 <!-- Stacking Task -->
-<section class="section is-medium">
+<section class="section is-medium" style="padding-top: 5rem; padding-bottom: 2rem;">
   <div class="container is-widescreen">
     <h3 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 30px;">Stacking</h3>
     <div class="content has-text-centered" style="max-width: 900px; margin: 0 auto 40px;">
@@ -406,7 +405,7 @@
 </section>
 
 <!-- Crossword Task -->
-<section class="section is-medium">
+<section class="section is-medium" style="padding-top: 5rem; padding-bottom: 2rem;">
   <div class="container is-widescreen">
     <h3 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 30px;">Crossword</h3>
     <div class="content has-text-centered" style="max-width: 900px; margin: 0 auto 40px;">
@@ -515,7 +514,7 @@
 </section>
 
 <!-- Reorientation Task -->
-<section class="section is-medium">
+<section class="section is-medium" style="padding-top: 5rem; padding-bottom: 2rem;">
   <div class="container is-widescreen">
     <h3 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 30px;">Reorientation</h3>
     <div class="content has-text-centered" style="max-width: 900px; margin: 0 auto 40px;">
@@ -565,7 +564,7 @@
 </section>
 
 <!-- Kitchen Task -->
-<section class="section is-medium">
+<section class="section is-medium" style="padding-top: 5rem; padding-bottom: 2rem;">
   <div class="container is-widescreen">
     <h3 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 30px;">Kitchen</h3>
     <div class="content has-text-centered" style="max-width: 900px; margin: 0 auto 40px;">
@@ -647,20 +646,155 @@
   </div>
 </section>
 
+<!-- VLMs as Robot Agent Benchmarks Section -->
+<section class="section is-medium" id="benchmark" style="padding-top: 3rem; padding-bottom: 3rem;">
+  <div class="container is-widescreen">
+    <h2 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 40px;">VLMs as Robot Agent Benchmarks</h2>
+    
+    <!-- 1. Can a Single VLM Drive a Robot Agent? -->
+    <div style="margin-bottom: 60px;">
+      <h3 class="title is-4" style="color: #2c3e50; margin-bottom: 30px;">1. Can a Single VLM Drive a Robot Agent?</h3>
+      
+      <!-- Single-VLM Pipeline Comparison -->
+      <div style="margin-bottom: 40px;">
+        <h4 class="title is-5" style="color: #555; margin-bottom: 20px;">Single-VLM Pipeline Comparison</h4>
+        <div class="has-text-centered" style="margin-bottom: 18px;">
+          <img src="./static/images/benchmark/exp1_chart.png" alt="Single-VLM Pipeline Comparison" style="width: 80%; max-width: 600px; border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+        </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1rem; line-height: 1.7; color: #666; text-align: center; font-style: italic;">We compare single-VLM baselines under the same agent pipeline to isolate model effects.</p>
+        </div>
+      </div>
+      
+      <!-- Failure Mode Breakdown -->
+      <div style="margin-bottom: 40px;">
+        <div class="has-text-centered" style="margin-bottom: 20px;">
+          <img src="./static/images/benchmark/exp1_failure_modes.png" alt="Failure Mode Breakdown" style="width: 100%; max-width: 1100px; border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+        </div>
+        <div style="max-width: 900px; margin: 0 auto;">
+          <p style="font-size: 1rem; line-height: 1.7; color: #666; text-align: center; font-style: italic;">Failure mode breakdown for single-VLM pipelines on the sorting task.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 2. Module Benchmark -->
+    <div style="margin-bottom: 60px;">
+      <h3 class="title is-4" style="color: #2c3e50; margin-bottom: 30px;">2. Module Benchmark</h3>
+      
+      <!-- Radar Chart -->
+      <div style="margin-bottom: 40px;">
+        <h4 class="title is-5" style="color: #555; margin-bottom: 20px;">Modular Benchmark Radar Chart</h4>
+        <div class="has-text-centered" style="margin-bottom: 20px;">
+          <img src="./static/images/benchmark/submodule_performance_radar.png" alt="Sub-module Performance Comparison" style="width: 100%; max-width: 1100px; border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+        </div>
+        <div style="max-width: 1000px; margin: 0 auto;">
+          <p style="font-size: 1rem; line-height: 1.7; color: #666; text-align: center; font-style: italic;">Normalized per-module performance across the pipeline (higher is better). Each axis corresponds to a module score.</p>
+        </div>
+      </div>
+      
+      <!-- Time Comparison -->
+      <div style="margin-bottom: 40px;">
+        <h4 class="title is-5" style="color: #555; margin-bottom: 20px;">Latency Comparison Across VLMs</h4>
+        <div class="has-text-centered" style="margin-bottom: 20px;">
+          <img src="./static/images/benchmark/exp2_submodule_time_comparison.png" alt="Latency Comparison" style="width: 100%; max-width: 1000px; border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+        </div>
+      </div>
+      
+      <!-- Token Comparison -->
+      <div style="margin-bottom: 40px;">
+        <h4 class="title is-5" style="color: #555; margin-bottom: 20px;">Token Usage Comparison Across VLMs</h4>
+        <div class="has-text-centered" style="margin-bottom: 20px;">
+          <img src="./static/images/benchmark/exp2_submodule_token_comparison.png" alt="Token Usage Comparison" style="width: 100%; max-width: 1000px; border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+        </div>
+      </div>
+    </div>
+    
+    <!-- 3. Compositional Pipeline vs. Single VLM -->
+    <div style="margin-bottom: 60px;">
+      <h3 class="title is-4" style="color: #2c3e50; margin-bottom: 30px;">3. Compositional Pipeline vs. Single VLM</h3>
+      <div class="has-text-centered" style="margin-bottom: 20px;">
+        <img src="./static/images/benchmark/exp3_compositional_vs_single_vlm.png" alt="Compositional vs Single VLM" style="width: 90%; max-width: 800px; border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+      </div>
+      <div style="max-width: 1000px; margin: 0 auto;">
+        <p style="font-size: 1rem; line-height: 1.7; color: #666; text-align: center; font-style: italic;">We compare a Gemini Flash single-VLM baseline with our compositional pipeline across five manipulation tasks. Performance is measured by a task progress score capturing partial completion.</p>
+      </div>
+    </div>
+    
+    <!-- 4. Off-the-Shelf VLA vs. AgenticLab -->
+    <div style="margin-bottom: 40px;">
+      <h3 class="title is-4" style="color: #2c3e50; margin-bottom: 30px;">4. Off-the-Shelf VLA vs. AgenticLab</h3>
+      
+      <!-- Video and Chart side by side -->
+      <div class="columns is-variable is-6" style="align-items: center;">
+        <!-- VLA Video -->
+        <div class="column is-8" style="display: flex; justify-content: flex-end;">
+          <video autoplay muted loop playsinline style="width: 90%; border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <source src="./static/videos/vla.mp4" type="video/mp4">
+          </video>
+        </div>
+        
+        <!-- Performance Comparison Chart -->
+        <div class="column is-3">
+          <h4 class="title is-5" style="color: #555; margin-bottom: 20px;">Performance Comparison</h4>
+          <img src="./static/images/benchmark/exp5_vla_vs_vlm_comparison.png" alt="VLA vs AgenticLab Performance" style="width: 85%; border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+        </div>
+      </div>
+      <div style="max-width: 1100px; margin: 0 auto;">
+        <p style="font-size: 1rem; line-height: 1.7; color: #666; text-align: center; font-style: italic;">We compare a π0.5 VLA fine-tuned with 40 demonstrations for sorting and 30 for stacking against the AgenticLab pipeline on both tasks.</p>
+      </div> 
+    </div>
+  </div>
+</section>
+
+<!-- Ablation Study Section -->
+<section class="section is-medium" id="ablation" style="padding-top: 3rem; padding-bottom: 3rem;">
+  <div class="container is-widescreen">
+    <h2 class="title is-3 has-text-centered" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 40px;">Ablation Study</h2>
+    
+    <!-- Overall description -->
+    <div class="content has-text-centered" style="max-width: 900px; margin: 0 auto 50px;">
+      <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+        We analyze two critical components that enable reliable closed-loop robot manipulation in AgenticLab.
+      </p>
+    </div>
+    
+    <!-- Two videos stacked vertically -->
+    <div style="max-width: 900px; margin: 0 auto;">
+      <!-- Action Checker Video -->
+      <div style="margin-bottom: 50px;">
+        <h3 class="has-text-centered" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 20px;">Action Checker for Vision-Language<br>Closed-loop Reasoning</h3>
+        <div style="margin-bottom: 15px; background-color: #f5f7f9; padding: 15px 15px 15px 20px; border-left: 4px solid #95BD94; border-radius: 4px;">
+          <p style="font-size: 1rem; line-height: 1.6; color: #555; font-style: italic; margin: 0;">Comparing no checker, goal checker only, and full action checker to evaluate robustness against disturbances.</p>
+        </div>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <source src="./static/videos/ablation/Ablation_ac.mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <!-- Grasp Planner Video -->
+      <div>
+        <h3 class="has-text-centered" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 20px;">Grasp Planner for Active Perception</h3>
+        <div style="margin-bottom: 15px; background-color: #f5f7f9; padding: 15px 15px 15px 20px; border-left: 4px solid #95BD94; border-radius: 4px;">
+          <p style="font-size: 1rem; line-height: 1.6; color: #555; font-style: italic; margin: 0;">Evaluating how grasp pose verification using local point clouds improves semantic correctness and physical feasibility.</p>
+        </div>
+        <video autoplay muted loop playsinline width="100%" style="border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <source src="./static/videos/ablation/Ablation_gp.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section is-small" id="team">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered is-size-4-mobile" style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); padding-bottom: 15px; border-bottom: 4px solid #95BD94; margin-bottom: 40px;">Citation</h2>
-    <div class="container has-text-centered">
-    <br>
-    <pre class="is-hidden-mobile"><code>@article{guo2025agenticlab,
+    <h2 class="title is-3 is-size-4-mobile" style="margin-bottom: 30px; padding-bottom: 10px; border-bottom: 3px solid #95BD94; display: inline-block;">BibTeX</h2>
+    <div class="container">
+    <pre style="background-color: #f5f5f5; padding: 20px; border-radius: 6px; text-align: left; overflow-x: auto;"><code>@article{guo2025agenticlab,
   title={AgenticLab: A Real-World Robot Agent Platform that Can See, Think, and Act},
   author={Pengyuan Guo and Zhonghao Mai and Zhengtong Xu and Kaidi Zhang and Heng Zhang and Zichen Miao and Arash Ajoudani and Zachary Kingston and Qiang Qiu and Yu She},
   year={2025},
   journal={arXiv preprint},
 }</code></pre>
-    <p>
-      If you have any questions, please contact the AgenticLab team.
-    </p>
   </div>
 </section>
 
@@ -672,7 +806,7 @@
       <div class="column is-8">
         <div class="content has-text-centered">
           <p>
-            Website template borrowed from <a href="https://nvlabs.github.io/GEAR-SONIC/">GEAR-SONIC</a> and <a href="https://nerfies.github.io/">NeRFies</a>.
+            Website template borrowed from <a href="https://nerfies.github.io/">NeRFies</a>.
           </p>
         </div>
       </div>
